@@ -1,3 +1,4 @@
+#双变量线性回归
 import numpy as np
 class MLR:
     def __init__(self,X,Y,intercept=True):
