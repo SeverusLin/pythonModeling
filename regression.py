@@ -1,5 +1,6 @@
 #双变量线性回归
 import numpy as np
+from scipy.stats import f
 class MLR:
     def __init__(self,X,Y,intercept=True):
         self.X = X
@@ -20,3 +21,11 @@ class MLR:
             X=Xnew
         Y=X@self.a
         return Y
+    def Ftest(self,alpha):
+        yHat=self.predict(self.X)
+        Qe=((self.Y-yHat)**2).sum()
+        yAver=self.Y.mean()
+        U=((yHat-yAver)**2).sum()
+        Fvalue=U/(Qe/(self.X.shape[0]-2))
+        Falpha=f.isf(alpha,1,self.X.shape[0]-2)
+        return [Fvalue,Falpha]
