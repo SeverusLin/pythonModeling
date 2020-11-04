@@ -18,4 +18,8 @@ print(err)
 
 #%%
 print(mlr.FTest(0.01))
+#%%
+B=np.linalg.svd(x,full_matrices=True)
+print(B[1])
 
+# %%

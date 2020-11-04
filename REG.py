@@ -42,3 +42,10 @@ class MLR:
         Rdown=np.sqrt(((self.X-xAver)**2).sum()*((self.Y-yAver)**2).sum())
         R=abs(Rup/Rdown)
         return R,Ralpha,R>Ralpha
+    # 未完成 求协方差
+    # def COV(self):
+    #     xAver=np.mean(self.X,axis=0)
+    #     yAver=np.mean(self.Y,axis=0)
+    #     Rup1=self.X-xAver
+    #     Rup2=self.Y-yAver
+    #     Rup=(Rup1*Rup2).sum(axis=0)
