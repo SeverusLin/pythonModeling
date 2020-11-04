@@ -23,13 +23,15 @@ class MLR:
         return Y
     def FTest(self,alpha):
         yHat=self.predict(self.X)
-        Qe=((self.Y-yHat)**2).sum()
-        yAver=np.mean(self.Y)
-        U=((yHat-yAver)**2).sum()
-        Fvalue=U/(Qe/(self.X.shape[0]-2))
-        Falpha=f.isf(alpha,1,self.X.shape[0]-2)
+        Qe=((self.Y-yHat)**2).sum(axis=0)
+        yAver=np.mean(self.Y,axis=0)
+        U=((yHat-yAver)**2).sum(axis=0)
+        n,k=self.X.shape
+
+        Fvalue=(U/k)/(Qe/(n-k-1))
+        Falpha=f.isf(alpha,1,n-k-1)
         return Fvalue,Falpha,Fvalue>Falpha
-    def RTest(self,alpha):
+    def RTest(self,alpha):# 两个元素的检验
         Falpha=f.isf(alpha,1,self.X.shape[0]-2)
         Ralpha=np.sqrt(1/(1+(self.X.shape[0]-2)/Falpha))
         xAver=np.mean(self.X)

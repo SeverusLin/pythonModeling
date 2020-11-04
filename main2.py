@@ -1,11 +1,11 @@
 #%%
+import numpy as np
 from REG import MLR
-import numpy as np 
 
-A=np.loadtxt(r"C:\Users\51770\Desktop\pythonModeling\data.txt")
+data=np.loadtxt(r'C:\Users\51770\Desktop\pythonModeling\data2.txt')
 
-x=A[:,0:-1]
-y=A[:,1:]
+x=data[:,0:4]
+y=data[:,4:]
 mlr=MLR(x,y)
 mlr.fit()
 
@@ -19,8 +19,3 @@ print(err)
 #%%
 print(mlr.FTest(0.01))
 
-#%%
-print(mlr.RTest(0.01))
-
-
-# %%
