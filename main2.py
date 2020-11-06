@@ -1,4 +1,4 @@
-#%%
+# %%
 import numpy as np
 from REG import MLR
 
@@ -12,14 +12,15 @@ mlr.fit()
 yHat=mlr.predict(x)
 print(mlr.a)
 
-#%%
+# %%
 err=abs(yHat-y)/y*100
 print(err)
 
-#%%
+# %%
 print(mlr.FTest(0.01))
-#%%
+# %%
 B=np.linalg.svd(x,full_matrices=True)
 print(B[1])
 
 # %%
+print(mlr.COV(0.01))
