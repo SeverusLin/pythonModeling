@@ -1,6 +1,6 @@
 import numpy as np
 from PCA import PCA
-from REG import MLR
+from MLR import MLR
 class PCR:
     def __init__(self,X,Y):
         self.X=X
