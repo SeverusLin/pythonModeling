@@ -7,8 +7,8 @@ class PCR:
         self.Y=Y
     def confirmPCs(self):
         self.pca=PCA(self.X)
-        compare=self.pca.SVDdecompose()
-        return compare
+        compare,cum=self.pca.SVDdecompose()
+        return compare,cum
     def fit(self,PCs):
         T,P=self.pca.PCAdecompose(PCs)
         self.P=P
@@ -20,7 +20,7 @@ class PCR:
         T=np.dot(Xnew,self.P)
         ans=self.mlr.predict(T)
         return ans
-    def FTest(self,arfa):
-        return self.mlr.FTest(arfa)
+    def fTest(self,arfa):
+        return self.mlr.Ftest(arfa)
 
 

@@ -1,4 +1,3 @@
-# 
 import numpy as np
 class PCA:
     def __init__(self, X):
@@ -9,9 +8,10 @@ class PCA:
         self.P = B[2].T
         self.T = B[0]*B[1]
         compare=[lamda[i]/lamda[i+1]   for i in range(len(lamda)-1)]
-        return np.array(compare)
+        cum=lamda.cumsum()/lamda.sum()*100
+        return compare,cum
     def PCAdecompose(self,k):  
-    # 给定主成分数k，得到去处噪声后的得分T和载荷P
+# 给定主成分数k，得到去处噪声后的得分T和载荷P
         T = self.T[:,:k]
         P = self.P[:,:k]
         return T,P
