@@ -1,7 +1,6 @@
 # %%
 # 数据预处理
 import numpy as np
-from sklearn.cross_decomposition import PLSRegression
 from sklearn import datasets
 iris=datasets.load_iris() 
 data=iris.data
