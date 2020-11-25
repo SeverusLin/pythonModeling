@@ -22,3 +22,12 @@ print(ans[1])
 pca.plotScore(y,yAxis=2,inOne=True)
 
 # %%
+cls1=X1[y==1.0]
+cls2=X1[y!=1.0]
+from AvgStdBar import AvgStdBar
+avgstdBar=AvgStdBar(cls1,indx,'good')
+avgstdBar.pltBar()
+avgstdBar=AvgStdBar(cls2,indx,'bad')
+avgstdBar.pltBar()
+
+# %%
