@@ -1,5 +1,6 @@
 # 数据文件
 *.txt
+*.JPG
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
