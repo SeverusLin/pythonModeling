@@ -1,8 +1,10 @@
 # 数据文件
 *.txt
 *.JPG
+*.bmp
 # Byte-compiled / optimized / DLL files
 __pycache__/
+.vscode/
 *.py[cod]
 *$py.class
 
